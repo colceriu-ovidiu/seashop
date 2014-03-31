@@ -1,0 +1,24 @@
+{% set curr_menu = 'transfer' %}
+{% extends "COEShopBundle::admin_layout.html.twig" %}
+
+
+{% block left_side %}
+{% include "COEShopBundle:Admin:transfer_submenu.html.twig" with { cat: 5 } %}
+{% endblock %}
+
+{% block content %}
+<div class="top-bar">
+	<h1>Import</h1>
+</div><br />
+
+
+{% include "COEShopBundle:Admin:flash.html.twig" %}
+
+<form class="frm_edit" action="{{ path('admin_discount_edit', { 'id': id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    {{ form_widget(edit_form) }}
+    <p>
+        <button type="submit">Import</button>
+    </p>
+</form>
+
+{% endblock %}

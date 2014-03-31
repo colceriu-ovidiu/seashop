@@ -1,0 +1,26 @@
+
+h1.frm_title {
+	text-align: center;
+}
+
+#login_content {
+	margin: 0 auto 0 auto;
+	width: 930px;
+	background: #bbb4c4;
+}
+
+.row {
+	margin-left: 300px;
+	margin-top: 5px;
+}
+
+.row label {
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+}
+
+input[type=submit] {
+	margin-left: 400px;
+	margin-top: 5px
+}

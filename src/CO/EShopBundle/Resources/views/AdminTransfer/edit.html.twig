@@ -1,0 +1,31 @@
+{% extends "COEShopBundle::admin_layout.html.twig" %}
+{% set curr_menu = 'catalog' %}
+
+{% block left_side %}
+{% include "COEShopBundle:Admin:promo_submenu.html.twig" with { cat: 5 } %}
+{% endblock %}
+
+{% block content %}
+<div class="top-bar">
+	<h1>Banner edit</h1>
+	<div class="breadcrumbs"><a href="#">Homepage</a> / <a href="#">Contents</a></div>
+</div>
+
+<br style="clear:left" />
+
+<form class="frm_edit" action="{{ path('admin_discount_edit', { 'id': id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    {{ form_widget(edit_form) }}
+    <p>
+        <button type="submit">Save</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('admin_discount') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+
+{% endblock %}

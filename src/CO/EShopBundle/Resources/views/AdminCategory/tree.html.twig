@@ -1,0 +1,25 @@
+{% for item in items %}
+	<tr>
+			<td>{{ item.id }}</td>
+			<td class="col_val_name" >{{ item.name }}</td>
+			<td>{{ item.type }}</td>
+			<td>
+				<a href="{{ path('admin_category_edit', { 'id': item.id }) }}">edit</a>
+				<a href="{{ path('admin_category_delete', { 'id': item.id }) }}" class="act_delete" alt="categoria {{ item.name }}" >delete</a>
+			</td>
+	</tr>
+	{% if item.childrens|length >0 %}
+	 {% for subcat in item.childrens %}
+			<tr>
+					<td>{{ subcat.id }}</td>
+					<td class="col_val_name" > &raquo; {{ subcat.name }}</td>
+					<td>{{ subcat.type }}</td>
+					<td>
+						<a href="{{ path('admin_category_edit', { 'id': subcat.id }) }}">edit</a>
+						<a href="{{ path('admin_category_delete', { 'id': subcat.id }) }}" class="act_delete" alt="{{ subcat.name }}" >delete</a>
+					</td>
+			</tr>
+		{% endfor %}
+	{% endif %}
+{% endfor %}
+

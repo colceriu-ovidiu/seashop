@@ -1,0 +1,27 @@
+{% extends 'COEShopBundle::layout.html.twig' %}
+
+{% block title %}WWW.PRETIOASA.RO{% endblock title %}
+
+{% block content %}
+<h3>Bine ati venit!</h3>
+<p>
+{{ render(controller('COEShopBundle:Page:show', { name: '_home' } )) }}
+</p>
+<div class="p_separator" ></div>		
+
+<h3>Articolul zilei - {{ article.title }} <span> ({{ article.created|date('d.m.Y') }})</span></h3>
+<p>{{ article.blog(500) | raw }}</p>
+<a href="{{ path('_show_article', { 'id': article.id, 'slug': article.slug }) }}" class="mai_departe" >mai departe >></a>
+<div class="p_separator" ></div>		
+
+<h3>Noutati pentru tine</h3>
+
+<div id="promo_prods" >
+{% for promo in promos %}
+	{% include 'COEShopBundle:Catalog:thumbnail.html.twig' with {'product': promo.product} %}
+{% endfor %}
+</div>
+
+<br class="cl" /><br class="cl" />
+
+{% endblock content %}

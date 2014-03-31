@@ -1,0 +1,55 @@
+{% set curr_menu = 'catalog' %}
+{% extends "COEShopBundle::admin_layout.html.twig" %}
+
+
+{% block left_side %}
+{% include "COEShopBundle:Admin:promo_submenu.html.twig" with { cat: 5 } %}
+{% endblock %}
+
+{% block content %}
+<div class="top-bar">
+	<a href="{{ path('admin_banner_edit', { 'id': 0 }) }}" class="button">ADD NEW </a>
+	<h1>Banners list</h1>
+	<div class="breadcrumbs"><a href="#">Homepage</a> / <a href="#">Contents</a></div>
+</div><br />
+
+{% if app.session.flash('notice') %}
+		<div class="flash-message">
+				<em>Notice</em>: {{ app.session.flash('notice') }}
+		</div>
+{% endif %}
+
+
+<div class="table">
+<img src="img/bg-th-left.gif" width="8" height="7" alt="" class="left" />
+<img src="img/bg-th-right.gif" width="7" height="7" alt="" class="right" />
+<table class="listing" cellpadding="0" cellspacing="0">
+    <thead>
+        <tr>
+            <th class="first" >Id</th>
+            <th>Name</th>
+            <th>Img Path</th>
+            <th class="last" >Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td>{{ entity.id }}</td>
+            <td>{{ entity.name }}</td>
+						<td>{{ entity.picsrc }}</td>
+            <td>
+							<a href="{{ path('admin_banner_edit', { 'id': entity.id }) }}">edit</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<div class="select">
+	<strong>Other Pages: </strong>
+	<select>
+		<option>1</option>
+	</select>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+<div id="top_banner" >
+	<div id="mySlider" class="evoslider default"> <!-- start evo slider -->
+		<dl>
+{% for banner in banners %}			
+			<dt>slide x</dt>
+			<dd>
+				<div class="banner_text" >
+					<h2><a href="{{ path('_view_product', {'prod_slug': banner.product.slug, 'prod_id': banner.product.id }) }}" >{{ banner.name }}</a></h2>
+					<div class="description" >{{ banner.description }}</div>
+					<div class="banner_pret" >{{ banner.product.price }}<span>&nbsp;ron</span></div>
+				</div>
+				<div class="banner_img" >					
+					<img src="{{ ('/uploads/banners/'~banner.picsrc) }}" />
+				</div>
+			</dd>
+{% endfor %}			
+
+		</dl>
+	</div> <!-- end evo slider -->
+
+	<script type="text/javascript">
+				
+		$("#mySlider").evoSlider({
+			mode: "slider",                  // Sets slider mode ("accordion", "slider", or "scroller")
+			width: 930,                         // The width of slider
+			height: 280,                        // The height of slider
+			slideSpace: 5,                      // The space between slides
+		
+			mouse: true,                        // Enables mousewheel scroll navigation
+			keyboard: true,                     // Enables keyboard navigation (left and right arrows)
+			speed: 500,                         // Slide transition speed in ms. (1s = 1000ms)
+			easing: "swing",                    // Defines the easing effect mode
+			loop: true,                         // Rotate slideshow
+		
+			autoplay: false,                     // Sets EvoSlider to play slideshow when initialized
+			interval: 5000,                     // Slideshow interval time in ms
+			pauseOnHover: true,                 // Pause slideshow if mouse over the slide
+			pauseOnClick: true,                 // Stop slideshow if playing
+			
+			directionNav: true,                 // Shows directional navigation when initialized
+			directionNavAutoHide: false,        // Shows directional navigation on hover and hide it when mouseout
+		
+			controlNav: true,                   // Enables control navigation
+			controlNavAutoHide: false           // Shows control navigation on mouseover and hide it when mouseout 
+		});
+	
+	</script>	
+</div>

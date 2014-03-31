@@ -1,0 +1,32 @@
+{% extends "COEShopBundle::layout.html.twig" %}
+
+{% block title %}E-Shop product list{% endblock %}
+
+{% block left_side_categories %}
+{% render "COEShopBundle:Catalog:tree" with {'type': 0, 'cat_id': 0} %}
+{% endblock %}
+
+{% block left_side_accesories %}
+{% render "COEShopBundle:Catalog:tree" with {'type': 1, 'cat_id': 0} %}
+{% endblock %}
+
+
+{% block content %}
+
+<h3>Rezultatul cautarii</h3>
+
+{% if error %}
+<div>{{ error }}</div>
+{% endif %}
+
+{% if products|length>0 %}
+<div id="promo_prods" >
+{% for product in products %}
+	{% include 'COEShopBundle:Catalog:thumbnail.html.twig' with {'product': product} %}
+{% endfor %}
+</div>
+{% else %}
+nu s-au gasit produse
+{% endif %}
+    
+{% endblock %}

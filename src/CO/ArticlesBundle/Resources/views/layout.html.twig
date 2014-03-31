@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/coarticles/css/articles.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block sidebar %}
+    {% render "COArticlesBundle:Article:sidebar" %}
+{% endblock %}

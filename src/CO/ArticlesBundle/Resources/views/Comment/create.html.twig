@@ -1,0 +1,8 @@
+{% extends 'COArticlesBundle::layout.html.twig' %}
+
+{% block title %}Add Comment{% endblock%}
+
+{% block body %}
+    <h1>Add comment for blog post "{{ comment.article.title }}"</h1>
+    {% include 'COArticlesBundle:Comment:form.html.twig' with { 'form': form } %}
+{% endblock %}

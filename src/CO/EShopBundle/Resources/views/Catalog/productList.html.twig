@@ -1,0 +1,31 @@
+{% extends "COEShopBundle::layout.html.twig" %}
+
+{% block title category_name %}
+
+{% block left_side_categories %}
+{% render "COEShopBundle:Catalog:tree" with {'type': 0, 'cat_id': cat_id} %}
+{% endblock %}
+
+{% block left_side_accesories %}
+{% render "COEShopBundle:Catalog:tree" with {'type': 1, 'cat_id': cat_id} %}
+{% endblock %}
+
+
+{% block content %}
+
+<h3>{{ category_name }}</h3>
+
+<div id="promo_prods" >
+{% for product in products %}
+	{% include 'COEShopBundle:Catalog:thumbnail.html.twig' with {'product': product} %}
+{% endfor %}
+</div>
+
+<br class="cl" />
+
+{% if pag_total>0 %}
+{% include 'COEShopBundle:Catalog:pagination.html.twig' with {'total': pag_total} %}
+{% endif %}
+<br class="cl" /><br />
+    
+{% endblock %}

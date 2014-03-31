@@ -1,0 +1,21 @@
+{% block _banner_product_widget %}
+    <div class="integer_widget">
+        {% set type = type|default('number') %}
+        *{{ block('form_widget_simple') }}*
+    </div>
+{% endblock %}
+
+{% block field_row %}
+{% spaceless %}
+    {% set class='' %}
+    {% if attr.row_class is defined %}
+    {% set class = 'class=' ~ attr.row_class ~ '' %}
+    {% endif %}
+
+    <div {{ class }} >
+        {{ form_label(form, label|default(null)) }}
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+    </div>
+{% endspaceless %}
+{% endblock field_row %}

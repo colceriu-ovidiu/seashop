@@ -1,0 +1,6 @@
+<form action="{{ path('_create_comment', { 'id' : comment.article.id } ) }}" method="post" {{ form_enctype(form) }} class="blogger">
+    {{ form_widget(form) }}
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+</form>

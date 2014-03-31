@@ -1,0 +1,25 @@
+{% set curr_menu = 'transfer' %}
+{% extends "COEShopBundle::admin_layout.html.twig" %}
+
+
+{% block left_side %}
+{% include "COEShopBundle:Admin:transfer_submenu.html.twig" with { cat: 5 } %}
+{% endblock %}
+
+{% block content %}
+<div class="top-bar">
+	<h1>Discounts list</h1>
+</div><br />
+
+
+{% include "COEShopBundle:Admin:flash.html.twig" %}
+
+<div class="table">
+<table class="listing" cellpadding="0" cellspacing="0">
+    <tbody>
+		<tr><td><a href="{{ path('admin_discount_edit', { 'id': '0' }) }}" >export</a></td></tr>
+		<tr><td><a href="" >import</a></td></tr>
+    </tbody>
+</table>
+</div>
+{% endblock %}
