@@ -50,15 +50,6 @@
 </head>
 <body>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-41465812-1', 'pretioasa.ro');
-  ga('send', 'pageview');
-</script>
 
 <header>
 	<div id="top_menu">
@@ -91,7 +82,7 @@
 	<div id="left_content" >
 		<div id="categories_head" ><span>Categories</span></div>
 		{% block left_side_categories %}
-		{{ render(controller('COEShopBundle:Catalog:tree', {'type': 0} )) }}
+		{{ render(controller('COEShopBundle:Catalog:tree')) }}
 		{% endblock %}
 		<div class="left_menu_head" ><span>Newsletter</span></div>
 		<div id="newsletter_container" >
