@@ -1,0 +1,23 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     localhost
+    database_port:     ~
+    database_name:     seashop
+    database_user:     seashop_dbuser
+    database_password: somepass
+
+    mailer_transport:  smtp
+    mailer_host:       localhost
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt
+    
+    items_per_page:    12
+    admin_items_per_page: 13
+    
+    email_from:        office@seashop.com
+    email_contact:     contact@seashop.com
+
+    show_phone: false

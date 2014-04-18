@@ -1,0 +1,20 @@
+<div class="categories" >
+	<div class="content">
+	<ul  id="root"  class="menu" >
+	{% for item in items %}
+		<li>
+			<a href='javascript:void(0);' childid = 'c_{{ item.id }}' class='{% if item.id==parrent_cat_id %}cat_open{% else %}cat_close{% endif %} category'><span>{{ item.name }}</span></a>
+			<!--a href="{{ path('_product_list', {'category_slug': item.slug }) }}" class="{% if item.id==current_cat_id %}cat_active{% endif %}" >{{ item.name }}</a-->
+		</li>
+		{% if item.childrens|length >0 %}
+		<ul id="c_{{ item.id }}" style="display:{% if item.id==parrent_cat_id %}block{% else %}none{% endif %}" >
+		 {% for subcat in item.childrens %}
+				<li><a href="{{ path('_product_list', {'category_slug': subcat.slug }) }}" class="{% if subcat.id==current_cat_id %}active{% endif %}" >{{ subcat.name }}</a></li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	{% endfor %}
+	</ul>
+		
+	</div>
+</div>

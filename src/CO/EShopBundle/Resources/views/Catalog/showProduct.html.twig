@@ -1,0 +1,81 @@
+{% extends "COEShopBundle::layout.html.twig" %}
+
+{% block title product.shortdesc %}
+
+{% block content %}
+
+<a href="{{ url_back }}" >&laquo; Back</a>
+
+<div id="view_product" >
+	<div class="prod_name">
+		<div class="desc_box_light_top" ></div>
+		<h1>{{ product.shortdesc }}</h1>
+	</div>
+
+	<div class="prod_image">	
+	{% if (product.picsrc!='') %}
+		<img src="{{ ('uploads/prodpics/'~product.picsrc) | apply_filter('prod_desc') }}" alt="{{ product.shortdesc }}" />
+	{% endif %}
+	</div>
+	<div class="prod_metadata" >
+		<div class="desc_box_light">
+			<div class="desc_box_light_top" ></div>
+			<div class="desc_box_light_middle" >
+				<div class="prod_price">
+					<span>{{ product.price }}</span> RON / {{ product.um }}
+				</div>
+				<div class="stock" >{% if product.available %}IN STOCK{% else %}OUT OF STOCK{% endif %}</div>				
+				<form action="{{ path('_cart_add') }}" class="form_add_prod" method="post" >
+					<input type="hidden" name="prod_id" value="{{ product.id }}" />
+					<input type="text" name="qty" />
+					<input type="submit" name="submit" value="submit" />
+				</form>
+
+
+			</div>
+			<div class="desc_box_light_bottom" ></div>
+		</div>
+		{% if show_phone %}
+		<div class="desc_box_dark mt10">
+			<div class="desc_box_dark_top" ></div>
+			<div class="desc_box_dark_middle desc_box_call" >
+				<div class="text">
+					Comanda prin telefon <br />
+					0741 111 111
+				</div>
+			</div>
+			<div class="desc_box_dark_bottom" ></div>
+		</div>
+		{% endif %}
+		<div class="desc_box_dark mt10">
+			<div class="desc_box_dark_top" ></div>
+			<div class="desc_box_dark_middle desc_box_transport" >
+				<div class="text">
+					Termeni de livrare <br />
+					Detalii livrare
+				</div>
+			</div>
+			<div class="desc_box_dark_bottom" ></div>
+		</div>
+		<div class="desc_box_dark">
+			<div class="desc_box_dark_top" ></div>
+			<div class="desc_box_dark_middle desc_box_info" >
+				<div class="text">
+					Identiicare produs: <br />
+					cod produs: {{ product.name }} <br />
+					Categorie: {{ product.category.name }}
+				</div>
+			</div>
+			<div class="desc_box_dark_bottom" ></div>
+		</div>
+	</div>
+	<br class="cb" />
+	<hr />
+	<div class="prod_description">
+		<div class="head" >Descriere produs</div>
+		{{ product.description }}	
+		<br /><br />
+	</div>	
+</div>
+
+{% endblock %}

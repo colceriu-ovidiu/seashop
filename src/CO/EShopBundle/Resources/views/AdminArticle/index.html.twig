@@ -1,0 +1,41 @@
+{% set curr_menu = 'contents' %}
+{% extends "COEShopBundle::admin_layout.html.twig" %}
+
+
+{% block left_side %}
+{% include "COEShopBundle:Admin:content_submenu.html.twig" with { cat: 5 } %}
+{% endblock %}
+
+{% block content %}
+<div class="top-bar">
+	<a href="{{ path('admin_article_edit', { 'id': 0 }) }}" class="button">ADD NEW </a>
+	<h1>Blog Articles list</h1>
+	<div class="breadcrumbs"><a href="#">Homepage</a> / <a href="#">Contents</a></div>
+</div><br />
+
+{% include "COEShopBundle:Admin:flash.html.twig" %}
+
+<div class="table">
+<table class="listing" cellpadding="0" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td>{{ entity.id }}</td>
+            <td class="col_val_name" >{{ entity.title }}</td>
+            <td>
+				<a href="{{ path('admin_article_edit', { 'id': entity.id }) }}">edit</a>
+                <a href="{{ path('admin_article_delete', { 'id': entity.id }) }}" class="act_delete" alt="{{ entity.title }}" >delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

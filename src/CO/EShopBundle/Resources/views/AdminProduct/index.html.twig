@@ -1,0 +1,67 @@
+{% set curr_menu = 'catalog' %}
+{% extends "COEShopBundle::admin_layout.html.twig" %}
+
+
+{% block left_side %}
+{% include "COEShopBundle:Admin:catalog_submenu.html.twig" with { cat: 5 } %}
+{% endblock %}
+
+{% block content %}
+<div class="top-bar">
+	<a href="{{ path('admin_product_edit', { 'id': '0' }) }}" class="button">ADD NEW </a>
+	<h1>Product list</h1>
+	<div class="breadcrumbs"><a href="#">Homepage</a> / <a href="#">Contents</a></div>
+</div><br />
+
+{% include "COEShopBundle:Admin:flash.html.twig" %}
+
+<div class="table">
+<table class="listing" cellpadding="0" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Picsrc</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td>{{ entity.id }}</td>
+			<td>{{ entity.category_name }}</td>
+            <td><b>{{ entity.name }}</b></td>
+            <td><b>{{ entity.price }}</b> RON</td>
+            <td><img src="{{ ('uploads/prodpics/'~entity.picsrc) | apply_filter('prod_thumb') }}" width="30" height="30" /></td>
+            <td>
+							<a href="{{ path('admin_product_edit', { 'id': entity.id }) }}">edit</a>
+							<a href="{{ path('admin_product_delete', { 'id': entity.id }) }}" class="act_delete" alt="{{ entity.name }}" >delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul class="pags" >
+    {% if pag_curr>1 %}
+    <li>
+        <a href="{{ path('admin_product', { 'pag': pag_curr-1 }) }}">&laquo; prev</a>
+    </li>
+    {% endif %}
+    {% for page in 1..pag_total %}
+    <li {% if page == pag_curr %}class="current"{% endif %} >
+          <a href="{{ path('admin_product', { 'pag': page }) }}">{{ page }}</a>
+    </li>
+    {% endfor %}
+    {%if pag_curr<pag_total %}
+    <li>
+        <a href="{{ path('admin_product', { 'pag': pag_curr+1 }) }}">next &raquo;</a>
+    </li>
+    {% endif %}
+</ul>
+
+</div>
+{% endblock %}
+

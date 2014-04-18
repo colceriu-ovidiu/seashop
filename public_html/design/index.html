@@ -1,0 +1,280 @@
+<!DOCTYPE html> 
+<head>
+	<meta charset="utf-8" />  
+	<title></title>	
+	<meta name="description" content="">
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css" />	
+	
+    <!--link rel="Stylesheet" type="text/css" href="css/default/reset.css" /-->
+    
+    <link rel="Stylesheet" type="text/css" href="css/evoslider.css" />
+    <link rel="Stylesheet" type="text/css" href="css/default/default.css" />   
+    
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/jquery.evoslider.lite-1.1.0.js"></script>	
+	<script type="text/javascript">
+	<!--//--><![CDATA[//><!--
+		$(document).ready(function() {
+			$("#root ul").each(function() {$(this).css("display", "none");});
+			$("#root .category").click(function() {
+				var childid = "#" + $(this).attr("childid");
+				if ($(childid).css("display") == "none") {$(childid).css("display", "block");}
+				else {$(childid).css("display", "none");}
+				if ($(this).hasClass("cat_close")) {$(this).removeClass("cat_close").addClass("cat_open");}
+				else{$(this).removeClass("cat_open").addClass("cat_close");}
+			});
+		});
+	//--><!]]>
+	</script>
+</head>
+<body>
+
+<header>
+    <div id="top_menu">
+		<nav>
+			<ul id="top_menu_nav_list" >
+				<li id="login" ><a href="/login.html">Login</a></li>			
+				<li id="cos_cumparaturi" ><a href="/archive.html">Cos Cumparaturi</a></li>			
+				<li id="contact" ><a href="/projects.html">Contact</a></li>
+			</ul>
+		</nav>
+		<div id="search_container" >
+			<form action="http://www.google.com/cse" id="cse-search-box">		  
+				<input type="hidden" name="cx" value="006605491522212473529:oynz7tc5stm" />
+				<input type="hidden" name="ie" value="UTF-8" />
+				<input type="search" name="q" size="31" placeholder="Search..."/>		  
+			</form>		
+		<div>
+	</div>
+</header>
+
+<div id="top_banner" >
+	<div id="mySlider" class="evoslider default"> <!-- start evo slider -->
+		<dl>
+			<dt>slide one</dt>
+			<dd>
+				<div class="banner_text" >
+					<h2>Lorem Ipsum 1</h2>
+					<div class="description" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et venenatis lorem. Phasellus sem risus, lobortis tempus condimentum ut, congue luctus massa. Fusce vel lorem ante. Duis consequat tellus eget turpis congue tempus.</div>
+					<div class="banner_pret" >489,00<span>&nbsp;ron</span></div>
+				</div>
+				<div class="banner_img" >
+					<img src="imgs/img1.png" />
+				</div>
+			</dd>
+
+			<dt>slide two</dt>
+			<dd>
+				<div class="banner_text" >
+					<h2>Lorem Ipsum 2</h2>
+					<div class="description" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et venenatis lorem. Phasellus sem risus, lobortis tempus condimentum ut, congue luctus massa. Fusce vel lorem ante. Duis consequat tellus eget turpis congue tempus.</div>
+					<div class="banner_pret" >10,00<span>&nbsp;ron</span></div>
+				</div>
+				<div class="banner_img" >					
+				</div>
+			</dd>
+		
+			<dt>slide three</dt>
+			<dd>	        
+			</dd>
+		
+			<dt>slide four</dt>
+			<dd>        
+			</dd> 
+		</dl>
+	</div> <!-- end evo slider -->
+
+	<script type="text/javascript">
+				
+		$("#mySlider").evoSlider({
+			mode: "slider",                  // Sets slider mode ("accordion", "slider", or "scroller")
+			width: 930,                         // The width of slider
+			height: 280,                        // The height of slider
+			slideSpace: 5,                      // The space between slides
+		
+			mouse: true,                        // Enables mousewheel scroll navigation
+			keyboard: true,                     // Enables keyboard navigation (left and right arrows)
+			speed: 500,                         // Slide transition speed in ms. (1s = 1000ms)
+			easing: "swing",                    // Defines the easing effect mode
+			loop: true,                         // Rotate slideshow
+		
+			autoplay: false,                     // Sets EvoSlider to play slideshow when initialized
+			interval: 5000,                     // Slideshow interval time in ms
+			pauseOnHover: true,                 // Pause slideshow if mouse over the slide
+			pauseOnClick: true,                 // Stop slideshow if playing
+			
+			directionNav: true,                 // Shows directional navigation when initialized
+			directionNavAutoHide: false,        // Shows directional navigation on hover and hide it when mouseout
+		
+			controlNav: true,                   // Enables control navigation
+			controlNavAutoHide: false           // Shows control navigation on mouseover and hide it when mouseout 
+		});
+	
+	</script>	
+</div>
+
+<div id="top_round" ></div>
+<div id="top_content" >
+	<div id="left_content" >
+		<div id="categories_head" ><span>Bijuterii</span></div>
+		<div class="categories" >
+			<div class="content">
+				<ul id="root" class="menu">
+					<li>
+						<a href='javascript:void(0);' childid = 'c_13' class='cat_close category'>&nbsp;</a>
+						<a href='javascript:void(0);'>Bratari</a>
+					</li>
+					<ul id='c_13'>
+						<li>
+							<a href='javascript:void(0);'>Skelaxin</a>
+						</li>
+					</ul>					
+					<li>
+						<a href='javascript:void(0);' childid = 'c_5' class='cat_close category'>&nbsp;</a>
+						<a href='javascript:void(0);'>Inele</a>
+					</li>
+					<ul id='c_5'>
+						<li><a href='javascript:void(0);'>Inele 1</a></li>
+						<li><a href='javascript:void(0);'>Inele 2</a></li>
+						<li><a href='javascript:void(0);'>Inele 3</a></li>
+					</ul>
+					<li>
+						<a href='javascript:void(0);' class='cat_close category'>&nbsp;</a>
+						<a href='javascript:void(0);'>Cercei</a>
+					</li>
+				</ul>
+			</div>		
+		</div>
+		<div id="accesories_head" ><span>Accesorii Bijuterii</span></div>
+		<div class="categories" >
+			<div class="content">
+				<ul id="root" class="menu">
+					<li>
+						<a href='javascript:void(0);' childid = 'c_23' class='cat_close category'>&nbsp;</a>
+						<a href='javascript:void(0);'>Bratari Ac.</a>
+					</li>
+					<ul id='c_23'>
+						<li>
+							<a href='javascript:void(0);'>Skelaxin</a>
+						</li>
+					</ul>					
+					<li>
+						<a href='javascript:void(0);' childid = 'c_25' class='cat_close category'>&nbsp;</a>
+						<a href='javascript:void(0);'>Inele Ac.</a>
+					</li>
+					<ul id='c_25'>
+						<li><a href='javascript:void(0);'>Inele 11</a></li>
+						<li><a href='javascript:void(0);'>Inele 22</a></li>
+						<li><a href='javascript:void(0);'>Inele 33</a></li>
+					</ul>
+					<li>
+						<a href='javascript:void(0);' class='cat_close category'>&nbsp;</a>
+						<a href='javascript:void(0);'>Cercei Ac.</a>
+					</li>
+				</ul>
+			</div>		
+		</div>
+	</div>
+	<div id="content" >
+		<h3>Bine ati venit!</h3>
+		<p>Pellentesque aliquet auctor dictum. Suspendisse sed diam justo. Integer adipiscing tempus felis et convallis. Vivamus dapibus ullamcorper quam, ut consectetur ipsum placerat id. Aliquam semper suscipit porta. Aliquam adipiscing nisi vel dui vulputate id iaculis elit tincidunt. Fusce et elit eros.</p>
+		<div class="p_separator" ></div>		
+	
+		<h3>Articolul zilei <span>(13.10.2012)</span></h3>
+		<p>Pellentesque aliquet auctor dictum. Suspendisse sed diam justo. Integer adipiscing tempus felis et convallis. Vivamus dapibus ullamcorper quam, ut consectetur ipsum placerat id. Aliquam semper suscipit porta. Aliquam adipiscing nisi vel dui vulputate id iaculis elit tincidunt. Fusce et elit eros.</p>
+		<a href="" class="mai_departe" >mai departe >></a>
+		<div class="p_separator" ></div>		
+	
+		<h3>Noutati pentru tine</h3>
+	
+		<div id="promo_prods" >
+			
+			<div class="prod_thumb" >
+				<div class="head" >Nulla facilisi</div>
+				<div class="description" >
+					<img src="imgs/im_small1.png" />
+					<span>Nulla facilisi. Donec turpis augue, porta vitae lacinia nec, adipiscing sed massa</span>
+					<a href="#" class="goto_details" >detalii &raquo;</a>
+				</div>
+				<div class="price_section" >
+					<div class="price" >319,99 <span>RON</span></div>
+					<form action="#" class="form_add_prod" >
+						<input type="text" name="qty" />
+						<input type="submit" name="submit" value="submit" />
+					</form>
+				</div>
+				<div class="bottom" ></div>
+			</div>
+			
+			<div class="prod_thumb" >
+				<div class="head" >Nulla facilisi</div>
+				<div class="description" >
+					<img src="imgs/im_small2.png" />
+					<span>Nulla facilisi. Donec turpis augue, porta vitae lacinia nec, adipiscing sed massa</span>
+					<a href="#" class="goto_details" >detalii &raquo;</a>
+				</div>
+				<div class="price_section" >
+					<div class="price" >319,99 <span>RON</span></div>
+					<form action="#" class="form_add_prod" >
+						<input type="text" name="qty" />
+						<input type="submit" name="submit" value="submit" />
+					</form>
+				</div>
+				<div class="bottom" ></div>
+			</div>
+			
+			<div class="prod_thumb" >
+				<div class="head" >Nulla facilisi</div>
+				<div class="description" >
+					<img src="imgs/im_small3.png" />
+					<span>Nulla facilisi. Donec turpis augue, porta vitae lacinia nec, adipiscing sed massa</span>
+					<a href="#" class="goto_details" >detalii &raquo;</a>
+				</div>
+				<div class="price_section" >
+					<div class="price" >319,99 <span>RON</span></div>
+					<form action="#" class="form_add_prod" >
+						<input type="text" name="qty" />
+						<input type="submit" name="submit" value="submit" />
+					</form>
+				</div>
+				<div class="bottom" ></div>
+			</div>
+			
+			<div class="prod_thumb" >
+				<div class="head" >Nulla facilisi</div>
+				<div class="description" >
+					<img src="imgs/im_small4.png" />
+					<span>Nulla facilisi. Donec turpis augue, porta vitae lacinia nec, adipiscing sed massa</span>
+					<a href="#" class="goto_details" >detalii &raquo;</a>
+				</div>
+				<div class="price_section" >
+					<div class="price" >319,99 <span>RON</span></div>
+					<form action="#" class="form_add_prod" >
+						<input type="text" name="qty" />
+						<input type="submit" name="submit" value="submit" />
+					</form>
+				</div>
+				<div class="bottom" ></div>
+			</div>
+			
+		</div>
+
+		<br class="cl" /><br class="cl" />
+		
+	</div>
+</div>
+
+<footer>
+	<p>footer footer footer footer footer</p>
+	<p>
+		<a href="#" ><img src="imgs/facebook.png" /></a>
+		<a href="#" ><img src="imgs/linked.png" /></a>
+		<a href="#" ><img src="imgs/twitter.png" /></a>
+	</p>
+</footer>
+
+</body>
+
+</html>

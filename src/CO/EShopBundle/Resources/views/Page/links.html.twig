@@ -1,0 +1,12 @@
+{% extends 'COEShopBundle::layout.html.twig' %}
+
+{% block title %}Link-uri utile{% endblock %}
+
+{% block content %}
+<h3>Link-uri utile</h3>
+<p>
+{% render "COEShopBundle:Page:show" with { name: '_links' } %}
+</p>
+<br class="cl" /><br class="cl" />
+
+{% endblock %}

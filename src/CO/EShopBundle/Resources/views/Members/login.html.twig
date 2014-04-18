@@ -1,0 +1,36 @@
+{% extends "COEShopBundle::layout.html.twig" %}
+
+{% block title "Login" %}
+
+{% block content %}
+<div id="login_content" >
+	<h1 class="frm_title" >Login Clienti</h1>
+
+	{% if error %}
+			<div>{{ error.message }}</div>
+	{% endif %}
+
+	{% if is_logged %}
+		Sunteti deja logat cu utilizatorul <b>{{ app.user.username }}</b>
+	{% else %}
+	<form action="{{ path('members_login_check') }}" method="post" id="login_form" class="frm_edit" >
+		<div>
+			<div class="row" >
+				<label for="email">Email:</label>
+				<input type="text" id="username" name="_username" value="{{ last_username }}" />
+			</div>
+
+			<div class="row" >
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="_password" />
+			</div>
+		</div>
+		
+		<input style="float:left" type="submit" name="login" class="submit" value="Login" />
+		<a style="float:left; margin-left: 10px;" href="{{ path('_members_register') }}" >inregistrare</a>
+	</form>
+	{% endif %}
+			
+  <br />
+</div>
+{% endblock %}

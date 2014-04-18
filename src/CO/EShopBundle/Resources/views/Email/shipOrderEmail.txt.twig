@@ -1,0 +1,19 @@
+
+Comanda dumneavoastra #{{ order_id }} (plasata la {{ order_createTimestamp|date('Y-m-d h:m:s') }}) a fost trimisa.
+
+Codul AWB este {{ order_awb }}. Cu acest cod poteti urmari comanda pe site-ul firmei de curierat.
+
+Daca aveti orice intrebari legate de comanda dumneavoastra va rugam sa ne contactati la {{ config.contact_mail }}
+
+Acesta este un mesaj automat. 
+Va multumim ca ati ales sa fiti clientul nostru!
+
+Programul nostru de lucru: 
+PRELUARE COMENZI: Luni - Vineri, de la 09:00 la 19.00 (pentru comenzi primite telefonic) si NON-STOP pentru comenzi lansate pe site. 
+PROCESARI COMENZI (confirmari de stoc, informatii tehnice, etc): Luni - Vineri, de la 09:00 la 17.00, Sambata, Duminica: inchis. 
+Comenzile si intrebarile trimise dupa ora 17:00 si in zilele libere vor fi procesate a doua zi lucratoare.
+Numai bine, 
+Echipa {{ config.site_name }}. 
+
+Web: {{ config.site_address }}
+Email: {{ config.contact_mail }}

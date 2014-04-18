@@ -1,0 +1,47 @@
+{% set curr_menu = 'catalog' %}
+{% extends "COEShopBundle::admin_layout.html.twig" %}
+
+
+{% block left_side %}
+{% include "COEShopBundle:Admin:catalog_submenu.html.twig" with { cat: 5 } %}
+{% endblock %}
+
+{% block content %}
+<div class="top-bar">
+	<a href="{{ path('admin_category_edit', { 'id': 0 }) }}" class="button">ADD NEW </a>
+	<h1>Category list</h1>
+</div><br />
+
+{% include "COEShopBundle:Admin:flash.html.twig" %}
+
+<div class="table">
+<table class="listing" cellpadding="0" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+<tr>
+		<td colspan="4" class="col_val_name" >- Categorii -</td>
+</tr>			
+{% include "COEShopBundle:AdminCategory:tree.html.twig" with { items: categories } %}
+<tr>
+		<td colspan="4" class="col_val_name" >- Accesorii -</td>
+</tr>
+{% include "COEShopBundle:AdminCategory:tree.html.twig" with { items: categories_acc } %}
+
+<tr>
+		<td colspan="4" class="col_val_name" >- Genti -</td>
+</tr>
+{% include "COEShopBundle:AdminCategory:tree.html.twig" with { items: categories_genti } %}
+
+				
+    </tbody>
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,5 @@
+<div class="pagination" >
+	{% for i in 1..total %}
+	<a class="{% if (i==pag_nr) %}active{% endif %}" href="{{ link }}/{{ i }}" >{{ i }}</a>
+	{% endfor %}
+</div>

@@ -1,0 +1,36 @@
+{% set curr_menu = 'promo' %}
+{% extends "COEShopBundle::admin_layout.html.twig" %}
+
+
+{% block left_side %}
+{% include "COEShopBundle:Admin:promo_submenu.html.twig" with { cat: 5 } %}
+{% endblock %}
+
+{% block content %}
+<div class="top-bar">
+	<h1>Subscriber list</h1>
+</div><br />
+
+{% include "COEShopBundle:Admin:flash.html.twig" %}
+
+<div class="table">
+<table class="listing" cellpadding="0" cellspacing="0">
+    <thead>
+        <tr>
+            <th class="first" >Id</th>
+            <th>Name</th>
+            <th class="last" >Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td>{{ entity.id }}</td>
+            <td>{{ entity.email }}</td>
+			<td><a href="{{ path('admin_subscriber_delete', { 'id': entity.id }) }}" class="act_delete" >delete</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

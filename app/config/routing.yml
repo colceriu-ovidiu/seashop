@@ -1,0 +1,17 @@
+# Internal routing configuration to handle ESI
+#_internal:
+#    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#    prefix:   /_internal
+
+
+_imagine:
+    resource: .
+    type:     imagine
+
+COEShopBundle:
+    resource: "@COEShopBundle/Resources/config/routing.yml"
+    prefix:   /
+       
+COArticlesBundle:
+    resource: "@COArticlesBundle/Resources/config/routing.yml"
+    prefix:   /articles

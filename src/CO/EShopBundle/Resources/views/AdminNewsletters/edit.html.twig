@@ -1,0 +1,61 @@
+{% set curr_menu = 'promo' %}
+{% extends "COEShopBundle::admin_layout.html.twig" %}
+
+{% block left_side %}
+{% include "COEShopBundle:Admin:promo_submenu.html.twig" with { cat: 5 } %}
+{% endblock %}
+
+{% block content %}
+<!-- TinyMCE -->
+<script type="text/javascript" src="{{ asset('bundles/coeshop/js/tiny_mce/tiny_mce.js') }}"></script>
+<script type="text/javascript">
+	tinyMCE.init({
+		mode : "exact",
+		elements : "co_eshopbundle_newslettertype_content,elm2",
+		theme : "simple",
+		width: "600",
+		height: "400"
+	});
+</script>
+<!-- /TinyMCE -->
+
+<div class="top-bar">
+	<h1>Newsletter edit</h1>
+	<div class="breadcrumbs"><a href="{{ path('admin_newsletters') }}">&laquo; List</a></div>
+</div>
+
+{% include "COEShopBundle:Admin:flash.html.twig" %}
+
+<br style="clear:left" />
+
+<form class="frm_edit" action="{{ path('admin_newsletters_edit', { 'id': id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    {{ form_widget(edit_form) }}
+    <p>
+        <button type="submit">Save</button>
+    </p>
+</form>
+
+<hr />
+
+
+<a href="{{ path('admin_newsletters_send', { 'id': id }) }}" class="btn" id="btn_send" ><span>Send<span></a>
+<br />
+
+<div class="table" style="width:300px;" >
+<table class="listing" cellpadding="0" cellspacing="0" style="width:300px;" >
+    <thead>
+        <tr>
+            <th>Trimis la</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for session in sessions %}
+        <tr>
+            <td>{{ session.createTimestamp | date('Y-m-d h:m:s') }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock %}

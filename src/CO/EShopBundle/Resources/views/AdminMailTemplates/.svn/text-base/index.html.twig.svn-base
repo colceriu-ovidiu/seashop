@@ -1,0 +1,36 @@
+{% set curr_menu = 'settings' %}
+{% extends "COEShopBundle::admin_layout.html.twig" %}
+
+
+{% block left_side %}{% endblock %}
+
+{% block content %}
+<div class="top-bar">
+	<h1>Setari Variabile</h1>
+</div><br />
+
+{% include "COEShopBundle:Admin:flash.html.twig" %}
+
+<div class="table">
+<table class="listing" cellpadding="0" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td class="col_val_name" >{{ entity.name }}</td>
+            <td class="col_val_name" >{{ entity.content }}</td>
+            <td>
+							<a href="{{ path('admin_sitevars_edit', { 'id': entity.id }) }}">edit</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

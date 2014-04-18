@@ -1,0 +1,1 @@
+<?php if (function_exists('finfo_file')) {    echo "ok";} else {    echo "not defined";}
