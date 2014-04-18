@@ -19,6 +19,32 @@ class LoadCategories implements FixtureInterface
 
         $manager->persist($entityShoes);
 		
+        $entity = new Category();
+        $entity->setName('Casual');
+        $entity->setMetadescription('generic metadescription');
+        $entity->setMetakeywords('generic metakeywords');
+		$entity->setParent($entityShoes);
+
+        $manager->persist($entity);
+		
+        $entity = new Category();
+        $entity->setName('Sport');
+        $entity->setMetadescription('generic metadescription');
+        $entity->setMetakeywords('generic metakeywords');
+		$entity->setParent($entityShoes);
+
+        $manager->persist($entity);
+		
+        $entity = new Category();
+        $entity->setName('Boots');
+        $entity->setMetadescription('generic metadescription');
+        $entity->setMetakeywords('generic metakeywords');
+		$entity->setParent($entityShoes);
+
+        $manager->persist($entity);
+		
+		// ------------------------
+		
         $entityShoes = new Category();
         $entityShoes->setName('Long Sleeves');
         $entityShoes->setMetadescription('generic metadescription');
@@ -28,19 +54,42 @@ class LoadCategories implements FixtureInterface
 
         $entity = new Category();
         $entity->setName('Shirts');
-		$entity->setContent('generic content');
         $entity->setMetadescription('generic metadescription');
         $entity->setMetakeywords('generic metakeywords');
 
         $manager->persist($entity);
+
+        $entityJeans = new Category();
+        $entityJeans->setName('Jeans');
+        $entityJeans->setMetadescription('generic metadescription');
+        $entityJeans->setMetakeywords('generic metakeywords');
+
+        $manager->persist($entityJeans);
 
         $entity = new Category();
-        $entity->setName('Jeans');
+        $entity->setName('Straight');
         $entity->setMetadescription('generic metadescription');
         $entity->setMetakeywords('generic metakeywords');
+		$entity->setParent($entityJeans);
 
         $manager->persist($entity);
-	
+		
+        $entity = new Category();
+        $entity->setName('Skiny');
+        $entity->setMetadescription('generic metadescription');
+        $entity->setMetakeywords('generic metakeywords');
+		$entity->setParent($entityJeans);
+
+        $manager->persist($entity);
+		
+        $entity = new Category();
+        $entity->setName('Hip');
+        $entity->setMetadescription('generic metadescription');
+        $entity->setMetakeywords('generic metakeywords');
+		$entity->setParent($entityJeans);
+
+        $manager->persist($entity);
+		
         $manager->flush();
     }
 	
