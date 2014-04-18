@@ -1,9 +1,0 @@
-<form action="{{ path('subscribers_register') }}" id="cse-newsletter-box" method="post" {{ form_enctype(form) }} >
-	  {{ form_errors(form) }}
-		{{ form_widget(form._token) }}
-		{{ form_widget(form.email) }}
-		<input type="hidden" name="act" value="1" />
-		
-		<a href="javascript:;" id="lnk_dezabonare" class="lnk" >Dezabonare</a>
-		<input type="submit" name="submit" value="submit" />
-</form>

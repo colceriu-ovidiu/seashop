@@ -1,5 +1,0 @@
-services:  
-    co.twig.extension:        
-        class: CO\EShopBundle\Twig\EShopExtension 
-        tags:
-            - { name: twig.extension }

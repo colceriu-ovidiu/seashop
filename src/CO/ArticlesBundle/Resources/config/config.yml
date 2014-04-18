@@ -1,3 +1,0 @@
-parameters:
-  co_articles.emails.contact_email: contact@email.com
-  co_articles.comments.latest_comment_limit: 10
