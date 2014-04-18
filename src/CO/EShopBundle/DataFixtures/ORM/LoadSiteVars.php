@@ -5,7 +5,7 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use CO\EShopBundle\Entity\SiteVar;
 
-class LoadAdminUserData implements FixtureInterface
+class LoadSiteVarsData implements FixtureInterface
 {
     /**
      * {@inheritDoc}

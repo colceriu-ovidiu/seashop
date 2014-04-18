@@ -1,10 +1,8 @@
-
 .cl {
 	clear:left;
 }
 
 body {
-	background: url(../imgs/bg.png);
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	margin: 0;
 }
@@ -20,61 +18,19 @@ header, #top_menu  {
 }
 
 #top_menu {
-	height: 84px;
+	height: 135px;
 	margin: 0 0 0 0;
-	background: url(../imgs/menu.png) no-repeat;
 }
 
 #lnk_home {
 	display:block;
 	float: left;
-	width: 210px;
-	height: 70px;
-	margin-left: 25px;
-}
 
-ul#top_menu_nav_list {
-	float:left;
-	overflow: hidden;	
-	margin: 8px 0px 0px 5px;
-	padding: 0 0 0 0;
-	width: 435px;
-	height: 47px;
-	list-style-type: none;
-}
-ul#top_menu_nav_list  li {
-	float: left;
-	text-transform : uppercase;
-	margin: 15px 0 0 0;
-	padding: 0 0 0 0;
-}
-ul#top_menu_nav_list  li.separator {
-	background: url(../imgs/menu_sep.png) no-repeat;
-	margin: 0 0 0 0;
-	height: 47px;
-	width: 2px;
-}
-ul#top_menu_nav_list  li a {
-	text-decoration: none;
-	font-weight:bold;
-	font-size:13px;
-	margin: 0 0 0 20px;
-	color:#fff;
-}
-ul#top_menu_nav_list  li#login {
-	background: url(../imgs/login_icon.png) no-repeat 0px 5px;
-	width: 85px;
-	margin-left: 20px;
-}
-ul#top_menu_nav_list  li#cos_cumparaturi {
-	background: url(../imgs/cart_icon.png) no-repeat 0px 5px;
-	width: 165px;
-	margin-left: 20px;
-}
-ul#top_menu_nav_list  li#contact {
-	background: url(../imgs/mail_icon.png) no-repeat 0px 5px;
-	width: 112px;
+	width: 140px;
+	height: 130px;
 	margin-left: 25px;
+	background: url(../imgs/seashop_logo.png) no-repeat;
+	
 }
 
 #cart_amount {
@@ -97,39 +53,7 @@ ul#top_menu_nav_list  li#contact {
 	text-align: center;
 	color: #fff;
 	font-size: 16px;
-}
-#search_container #cse-search-box {	
-}
-#search_container #cse-search-box div.text-box {
-	background: url(../imgs/search_input_bg.png);
-	padding: 0 0 0 0;
-	margin: 10px 0 0 5px;
-	border: 0;
-	width: 191px;
-	height: 29px;
-	float: left;
-}
-#search_container #cse-search-box div.text-box input[type="text"] {
-	float: left;
-	padding: 0 0 0 0;
-	margin: 1px 0 0 7px;
-	border: 0;
-	width: 176px;
-	height: 26px;
-}
-#search_container #cse-search-box input[type="submit"] {
-	padding: 0 0 0 0;
-	margin: 15px 0 0 10px;
-	border: 0px;
-	background: url(../imgs/search_icon.png) no-repeat;	
-	/*text-indent: -9999px;*/
-	width:20px;
-	height: 20px;
-}
-.text-box {
-
-}
-	
+}	
 #newsletter_container {
 	float:left;
 	margin: 10px 0px 0px 10px;
@@ -147,28 +71,10 @@ ul#top_menu_nav_list  li#contact {
 	height: 30px;
 	float: left;
 }
-#newsletter_container #cse-newsletter-box div.text-box input[type="text"] {
-	padding: 0 0 0 0;
-	margin: 5px 0 0 10px;
-	border: 0;
-	width: 180px;
-	height: 23px;
-	float: left;
-}
-#newsletter_container #cse-newsletter-box input[type="submit"] {
-	padding: 0 0 0 0;
-	margin: 0 0 0 25px;
-	border: 0px;
-	background: url(../imgs/btn_abonare.png) no-repeat;	
-	text-indent: -9999px;
-	width:81px;
-	height: 28px;
-	cursor: pointer;
-}
 	
 
 #footer {
-	background: #000;
+	background: #f90;
 	color: #fff;
 	text-align: center;
         height: 70x;
@@ -188,15 +94,14 @@ ul#top_menu_nav_list  li#contact {
 }
 
 #top_banner  {
-	background: url(../imgs/img_bg.png) no-repeat;
+	background: #aaa;
 	height: 287px;
 }
 
 #top_content {
 	overflow:hidden;
 	margin: 0 auto 0 auto;
-	/*border:1px solid red;*/
-	background: url(../imgs/bg_bar.png) repeat-y;
+	background: #f50;
 }
 
 #left_content {
@@ -212,7 +117,6 @@ ul#top_menu_nav_list  li#contact {
 #content {
 	float:left;
 	width:710px; 
-	background: url(../imgs/top_content.png) no-repeat;
 }
 
 #content h3 {
@@ -277,10 +181,6 @@ table.list th
 	margin-top: 10px;
 }
 
-#top_round {
-	background: url(../imgs/top_content_round.png) no-repeat;
-	height:5px;
-}
 
 .categories {
 	/*background: #231F2D;*/
@@ -302,7 +202,7 @@ div.prod_thumb .description .price,
 div.prod_thumb .description .goto_details,
 div.prod_thumb .price_section .price
 {
-	color: #E30C85;
+	color: #055;
 }
 div.prod_thumb .description {
 	height: 215px;
@@ -667,16 +567,3 @@ table.list td.act a:hover { text-decoration: underline }
 	margin-left: 400px;
 	margin-top: 5px
 }*/
-
-/*========= social ==========*/
-div#social_footer {
-	overflow: auto;
-	width: 565px;
-	height: 40px;
-	margin: 0 auto 0 auto;
-	padding: 0 0 0 0;
-}
-.social_item {
-	width: 180px;
-	float:left;	
-}

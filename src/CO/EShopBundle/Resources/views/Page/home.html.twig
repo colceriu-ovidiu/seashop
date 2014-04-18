@@ -1,11 +1,11 @@
 {% extends 'COEShopBundle::layout.html.twig' %}
 
-{% block title %}WWW.PRETIOASA.RO{% endblock %}
+{% block title %}SeaShop{% endblock title %}
 
 {% block content %}
 <h3>Bine ati venit!</h3>
 <p>
-{% render "COEShopBundle:Page:show" with { name: '_home' } %}
+{{ render(controller('COEShopBundle:Page:show', { name: '_home' } )) }}
 </p>
 <div class="p_separator" ></div>		
 
@@ -24,4 +24,4 @@
 
 <br class="cl" /><br class="cl" />
 
-{% endblock %}
+{% endblock content %}

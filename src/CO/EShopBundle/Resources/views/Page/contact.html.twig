@@ -5,7 +5,7 @@
 <h3>Contact</h3>
 
 <p>
-{% render 'COEShopBundle:Page:show' with {'name': '_contact'} %}
+{{ render(controller('COEShopBundle:Page:show', {'name': '_contact'} )) }}
 </p>
 	
 <form action="{{ path('_contact') }}" method="POST" id="contact_form">

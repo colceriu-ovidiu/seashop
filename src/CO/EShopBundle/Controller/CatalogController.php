@@ -21,11 +21,10 @@ class CatalogController extends Controller
     /**    
      * @Template()              
      */
-    public function treeAction($type, $cat_id=0) 
+    public function treeAction($cat_id=0) 
     {
         $repository = $this->getDoctrine()->getRepository('COEShopBundle:Category');
         $categories = $repository->findBy(array(
-								'type' => $type,
 								'parent' => null
 							),
 							array(
@@ -43,7 +42,7 @@ class CatalogController extends Controller
 				
         return array(
         	'items'=>$categories, 
-					'current_cat_id'=>$cat_id,
+			'current_cat_id'=>$cat_id,
           'parrent_cat_id'=>$parrent_cat_id,
         );  
     }

@@ -23,8 +23,6 @@
     { line-height: 1.2em; font-size: 32px; margin-bottom: 10px; font-weight: normal; color: #F48A00; }
 .main-col p { line-height: 1.5em; margin-bottom: 20px; }
 
-#footer { border-top: 1px solid #ccc; clear: both; text-align: center; padding: 10px; color: #aaa; }
-
 #header .navigation li.logo a { border: 0px;}
 #header .navigation li.logo a { padding: 0px; margin: 0px; }
 #header .navigation li.logo { display: inline-block; text-align: left; width: 700px;  }

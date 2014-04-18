@@ -61,7 +61,7 @@ class PageController extends UberController
     }
 
     /**
-     * @Route("/termeni", name="_terms")
+     * @Route("/terms", name="_terms")
      * @Template()
      */
     public function termsAction()
@@ -71,7 +71,7 @@ class PageController extends UberController
 
 
     /**
-     * @Route("/protectia-consumatorului", name="_protect")
+     * @Route("/customer-protection", name="_protect")
      * @Template()
      */
     public function protectAction()
@@ -80,7 +80,7 @@ class PageController extends UberController
     }
     
     /**
-     * @Route("/linkuri", name="_links")
+     * @Route("/links", name="_links")
      * @Template()
      */
     public function linksAction()

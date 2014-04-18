@@ -19,9 +19,9 @@ class UberController extends Controller
 	const MAIL_TYPE_CONTACT = 6;
 
 	var $config = array(
-		'site_name'=>'www.pretioasa.ro',
-		'site_address'=>'www.pretioasa.ro',
-		'contact_mail'=>'office@pretioasa.ro',
+		'site_name'=>'SeaShop',
+		'site_address'=>'www....ro',
+		'contact_mail'=>'office@pseashop.com',
 		);
 
 	public function sendMail($mail_type, $params)

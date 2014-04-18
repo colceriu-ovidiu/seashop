@@ -2,7 +2,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
     <meta name="description" content="{{ meta_description|default('') }}">
-    <meta name="keywords" content="{{ meta_keywords|default('PRETIOASA HOMEPAGE | CREAREA DE BIJUTERII HANDMADE | MARGELE IEFTINE | MARGELE PRETIOASE | PRETIOASA.RO | ACCESORII BIJUTERII | HAND MADE | CRISTALE | BOHEMIA | SWAROVSKY | CAMEE | JAD | CUART | CERCEI | BRATARI | COLIERE | BROSE | INELE | SETURI | IEFTINE | PIETRE | SEMIPRETIOASE | AMETIST | TURCOAZ | CORAL | ONYX | SIDEF | ARGINT | METALE | PANDANTIVE | CHARM | FIMO | TRANDAFIRI | BALERINE | CHEITE | LACATE | LOCKE | BIJUTERII DIN MARGELE |  PANDATIVE | PERLE | CRISTAL |ACCESORII | MARGELE ONLINE | BIJUTERII ONLINE |MARGELE BIJUTERI |') }}">
+    <meta name="keywords" content="{{ meta_keywords|default('DEFAULT KEYWORDS') }}">
 	
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/coeshop/css/style.css') }}" />
     <link rel="Stylesheet" type="text/css" href="{{ asset('bundles/coeshop/css/evoslider.css') }}" />
@@ -45,79 +45,57 @@
 	//--><!]]>
 	</script>
 	
-	<title>{% block title %}WWW.PRETIOASA.RO{% endblock %}</title>		
+	<title>{% block title %}SEA SHOP{% endblock title %}</title>		
 	
 </head>
 <body>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-41465812-1', 'pretioasa.ro');
-  ga('send', 'pageview');
-</script>
 
 <header>
 	<div id="top_menu">
-		<nav>
+		<div id="menu" >
 			<a href="{{ path('_home') }}" id="lnk_home" ></a>
-			<ul id="top_menu_nav_list" >
-				<li id="login" >
-					{% render "COEShopBundle:Members:loginLink" %}
-				</li>			
-				<li class="separator" />
-				<li id="cos_cumparaturi" >									
-					<a href="{{ path('_cart') }}">Cos Cumparaturi</a>
-					{% render "COEShopBundle:Cart:amount" %}
-				</li>
-				<li class="separator" />
-				<li id="contact" ><a href="{{ path('_contact') }}">Contact</a></li>
-				<li class="separator" />
-			</ul>
-		</nav>
+
+			{{ render(controller('COEShopBundle:Members:loginLink')) }}
+
+			<a href="{{ path('_members_home') }}" >My Account</a>
+
+			<a href="{{ path('_cart') }}">Cos Cumparaturi</a>
+			{{ render(controller('COEShopBundle:Cart:amount')) }}
+			
+			<a href="{{ path('articles_list') }}" >Blog</a>
+
+			<a href="{{ path('_contact') }}">Contact</a>
+		</div>
 		<div id="search_container" >
 			<form action="{{ path('_product_search') }}" id="cse-search-box" method="post" >
-				<div class="text-box" >
-					<input type="text" name="src" size="31" placeholder="cauta"/>
-				</div>
-					<input type="submit" name="submit" value="submit" />
+				<input type="text" name="src" size="31" placeholder="cauta"/>
+				<input type="submit" name="submit" value="submit" />
 			</form>		
 		</div>
 	</div>
 </header>
 
-{% render "COEShopBundle:Page:banners" %}
+{{ render(controller('COEShopBundle:Page:banners')) }}
 
-<div id="top_round" ></div>
 <div id="top_content" >
 	<div id="left_content" >
-		<div id="categories_head" ><span>Bijuterii</span></div>
+		<div id="categories_head" ><span>Categories</span></div>
 		{% block left_side_categories %}
-		{% render "COEShopBundle:Catalog:tree" with {'type': 0} %}
-		{% endblock %}
-		<div class="left_menu_head" ><span>Accesorii Bijuterii</span></div>
-		{% block left_side_accesories %}
-		{% render "COEShopBundle:Catalog:tree" with {'type': 1} %}
-		{% endblock %}
-		<div class="left_menu_head" ><span>Genti</span></div>
-		{% block left_side_genti %}
-		{% render "COEShopBundle:Catalog:tree" with {'type': 2} %}
+		{{ render(controller('COEShopBundle:Catalog:tree')) }}
 		{% endblock %}
 		<div class="left_menu_head" ><span>Newsletter</span></div>
 		<div id="newsletter_container" >
-			{% render "COEShopBundle:Subscriber:register" %}
+			{{ render(controller('COEShopBundle:Subscriber:register')) }}
 		</div>
 	</div>
 	<div id="content" >
 		<div id="body_wrapper" >
-			{% if app.session.hasFlash('notice') %}
+			{% for flashMessage in app.session.flashbag.get('notice') %}
 			<div class="flash-notice">
-				<span>{{ app.session.flash('notice') }}</span>
+				<span>{{ flashMessage  }}</span>
 			</div>
-			{% endif %}
+			{% endfor %}
 				
 			{% block content %}{% endblock %}
 		</div>
@@ -126,44 +104,11 @@
 
 <div id="footer" >
     <div>
-        <a href="{{ path('_home') }}" >Acasa</a>|
-        <a href="{{ path('_members_home') }}" >Contul meu</a>|
-        <a href="{{ path('_cart') }}" >Cos cumparaturi</a>|
-        <a href="{{ path('_protect') }}" >Protectia consumatorului</a>|
-        <a href="{{ path('_terms') }}" >Termeni si conditii</a>|
-        <a href="{{ path('_contact') }}" >Contact</a>|
-        <a href="{{ path('articles_list') }}" >Blog</a>|
-        <a href="{{ path('_links') }}" >Linkuri utile</a>
+        <a href="{{ path('_protect') }}" >Customer Protection</a>
+        <a href="{{ path('_terms') }}" >Terms and conditions</a>
+        <a href="{{ path('_links') }}" >Links</a>
     </div>
-    <div id="social_footer" >
-        <a href="http://www.facebook.com/pages/Pretioasa/549186321775400" ><img src="{{ asset('bundles/coeshop/imgs/facebook.png') }}" /></a>
-		    <!--a href="#" ><img src="{{ asset('bundles/coeshop/imgs/linked.png') }}" /></a-->
-        <!--a href="#" ><img src="{{ asset('bundles/coeshop/imgs/twitter.png') }}" /></a-->
-		
-				<!--div class="social_item">
-					<div id="fb-root"></div>
-					<script>(function(d, s, id) {
-						var js, fjs = d.getElementsByTagName(s)[0];
-						if (d.getElementById(id)) return;
-						js = d.createElement(s); js.id = id;
-						js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-						fjs.parentNode.insertBefore(js, fjs);
-					}(document, 'script', 'facebook-jssdk'));</script>
-					<div class="fb-like" data-href="http://www.pretioasa.ro/" data-send="false" data-width="200" data-show-faces="false" data-font="arial" data-colorscheme="dark"></div>
-				</div-->
-
-				<div class="social_item">
-					<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.pretioasa.ro/" data-via="Pretioasa1">Tweet</a>
-					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-				</div>
-
-				<div class="social_item">
-					<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
-					<script type="IN/Share" data-url="http://www.pretioasa.ro/" data-counter="right"></script>		
-				</div>
-
-    </div>
-    <div id="copy" >Copyright 2012-2013 DezireJad - Pretioasa.Ro</div>
+    <div id="copy" >footer info</div>
 </div>
 
 </body>

@@ -46,13 +46,6 @@ class Category
      protected $products;
 		 
     /**
-     * @var SmallInt $type
-     *
-     * @ORM\Column(name="type", type="smallint", options={"default" = 0})
-     */
-    private $type;
-
-    /**
      * @var text $slug
      *
      * @ORM\Column(name="slug", type="text")
@@ -174,24 +167,6 @@ class Category
         return $this->products;
     }
 		
-
-    /**
-     * Get type
-     *
-     * @return smallint 
-     */	
-		public function getType() {
-			return $this->type;
-		}
-
-    /**
-     * Set type
-     *
-     * @param smallint $type
-     */
-		public function setType($type) {
-			$this->type = $type;
-		}
 	
     /**
      * Get slug
