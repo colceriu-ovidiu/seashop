@@ -82,7 +82,7 @@ class MembersController extends UberController
 
 				$entity->setUsername($entity->getEmail());
 
-				$em = $this->getDoctrine()->getEntityManager();
+				$em = $this->getDoctrine()->getManager();
 				$em->persist($entity);
 				$em->flush();
 
@@ -159,7 +159,7 @@ class MembersController extends UberController
 					$password = $encoder->encodePassword($raw_password, $exist_user->getSalt());				
 					$exist_user->setPassword($password);
 					
-					$em = $this->getDoctrine()->getEntityManager();
+					$em = $this->getDoctrine()->getManager();
 					$em->persist($exist_user);
 					$em->flush();
 					

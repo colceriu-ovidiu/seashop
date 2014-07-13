@@ -60,7 +60,7 @@ class AdminOrderController extends UberController
         if ($request->getMethod() == 'POST') {
         	$editForm->bindRequest($request);
 					if ($editForm->isValid()) {
-						$em = $this->getDoctrine()->getEntityManager();
+						$em = $this->getDoctrine()->getManager();
         		$em->persist($entity);
         		$em->flush();
         

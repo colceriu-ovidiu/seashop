@@ -33,7 +33,7 @@ class CatalogController extends Controller
 						);
 
         if ($cat_id>0) {
-          $em = $this->getDoctrine()->getEntityManager();
+          $em = $this->getDoctrine()->getManager();
           $category = $em->getRepository('COEShopBundle:Category')->find($cat_id);
           $parrent_cat_id = $category->getParent()->getId();
         } else {
@@ -115,7 +115,7 @@ class CatalogController extends Controller
     */
     public function showProductAction($prod_slug, $prod_id)
     {
-   		$em = $this->getDoctrine()->getEntityManager();
+   		$em = $this->getDoctrine()->getManager();
    		$product = $em->getRepository('COEShopBundle:Product')->find($prod_id);
    		$picsrc = $product->getPicsrc();
 
@@ -138,7 +138,7 @@ class CatalogController extends Controller
     */
     public function setslugAction()
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
 		echo "catagories <br />";
         $items = $em->getRepository('COEShopBundle:Category')->findAll();

@@ -54,7 +54,7 @@ class AdminArticleController extends Controller
 				if ($request->getMethod() == 'POST') {        	
 					$editForm->bindRequest($request);					
 					if ($editForm->isValid()) {						
-						$em = $this->getDoctrine()->getEntityManager();
+						$em = $this->getDoctrine()->getManager();
 						
 						$entity->setAuthor("admin");
 						

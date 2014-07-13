@@ -149,7 +149,7 @@ class CartController extends UberController
 			
 			$newuser->setUsername($newuser->getEmail());
 
-			$em = $this->getDoctrine()->getEntityManager();
+			$em = $this->getDoctrine()->getManager();
 			$em->persist($newuser);			
 		    
 			$order->setUser($newuser);

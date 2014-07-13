@@ -15,7 +15,7 @@ class ProductRepository extends EntityRepository
 {
 	
 	public function getByCategory($category_id, $offset, $limit) {
-		$em = $this->getEntityManager();
+		$em = $this->getManager();
 		$qb = $em->createQueryBuilder()
 							->select('p')
 							->from('COEShopBundle:Product', 'p')
@@ -39,7 +39,7 @@ class ProductRepository extends EntityRepository
 	}
 	
 	public function getByCategoryCount($category_id) {
-		$em = $this->getEntityManager();
+		$em = $this->getManager();
 
 		$qbc = $em->createQueryBuilder()
 							->select('count(p)')
@@ -53,7 +53,7 @@ class ProductRepository extends EntityRepository
 	}
 
 	public function findAllAsArr($p_offset=0, $p_limit=0) {
-		$em = $this->getEntityManager();
+		$em = $this->getManager();
 		$qb = $em->createQueryBuilder()
 							->select('p.id, p.name, p.price, p.picsrc, p.slug, c.name as category_name')
 							->from('COEShopBundle:Product', 'p')
@@ -73,7 +73,7 @@ class ProductRepository extends EntityRepository
 	}
 
 	public function findAllCount() {
-		$em = $this->getEntityManager();
+		$em = $this->getManager();
 
 		$qbc = $em->createQueryBuilder()
 							->select('count(p)')
@@ -85,7 +85,7 @@ class ProductRepository extends EntityRepository
 	}
 
 	public function findByNameContains($src) {
-		$em = $this->getEntityManager();
+		$em = $this->getManager();
 		$qb = $em->createQueryBuilder()
 							->select('p')
 							->from('COEShopBundle:Product', 'p')
@@ -98,7 +98,7 @@ class ProductRepository extends EntityRepository
 	}
 	
 	public function findByShortdescContains($src) {
-		$em = $this->getEntityManager();
+		$em = $this->getManager();
 		$qb = $em->createQueryBuilder()
 							->select('p')
 							->from('COEShopBundle:Product', 'p')
@@ -111,7 +111,7 @@ class ProductRepository extends EntityRepository
 	}
 	
 	public function getProductsQB() {
-		return $this->getEntityManager()
+		return $this->getManager()
 						->createQueryBuilder()
 							->select('p')
 							->from('COEShopBundle:Product', 'p')

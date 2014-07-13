@@ -25,7 +25,7 @@ class AdminCatalogController extends Controller
     public function editCategoryAction($cat_id)
     {
     	if ($cat_id>0) {
-        	$em = $this->getDoctrine()->getEntityManager();
+        	$em = $this->getDoctrine()->getManager();
         	$category = $em->getRepository('COEShopBundle:Category')->find($cat_id);
         } else {
         	$category = new Category();
@@ -40,7 +40,7 @@ class AdminCatalogController extends Controller
         	$form->bindRequest($request);
         
         	if ($form->isValid()) {
-        		$em = $this->getDoctrine()->getEntityManager();
+        		$em = $this->getDoctrine()->getManager();
         		$em->persist($category);
         		$em->flush();
         
@@ -63,7 +63,7 @@ class AdminCatalogController extends Controller
     public function deleteCategoryAction($cat_id)
     {
     	if ($cat_id>0) {
-        	$em = $this->getDoctrine()->getEntityManager();
+        	$em = $this->getDoctrine()->getManager();
         	$category = $em->getRepository('COEShopBundle:Category')->find($cat_id);
         	$em->remove($category);
         	$em->flush();
@@ -87,7 +87,7 @@ class AdminCatalogController extends Controller
     public function editProductAction($prod_id, $cat_id)
     {
     	if ($prod_id>0) {
-    		$em = $this->getDoctrine()->getEntityManager();
+    		$em = $this->getDoctrine()->getManager();
     		$product = $em->getRepository('COEShopBundle:Product')->find($prod_id);
     		$picsrc = $product->getPicsrc();
     		$edit = true;    		
@@ -104,7 +104,7 @@ class AdminCatalogController extends Controller
     		$form->bindRequest($request);
     
     		if ($form->isValid()) {
-    			$em = $this->getDoctrine()->getEntityManager();
+    			$em = $this->getDoctrine()->getManager();
     			
     			// set category
     			$category = $em->getRepository('COEShopBundle:Category')->find($cat_id);
@@ -145,7 +145,7 @@ class AdminCatalogController extends Controller
     public function deleteProductAction($product_id)
     {
     	if ($product_id>0) {
-    		$em = $this->getDoctrine()->getEntityManager();
+    		$em = $this->getDoctrine()->getManager();
     		$product = $em->getRepository('COEShopBundle:Product')->find($product_id);
     		$em->remove($product);
     		$em->flush();
@@ -176,7 +176,7 @@ class AdminCatalogController extends Controller
             $form->bindRequest($request);
             
             if ($form->isValid()) {
-                $em = $this->getDoctrine()->getEntityManager();
+                $em = $this->getDoctrine()->getManager();
                 $em->persist($product);
                 $em->flush();
             

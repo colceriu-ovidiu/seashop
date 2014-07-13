@@ -24,7 +24,7 @@ class PageController extends UberController
      */
     public function homeAction()
     {
-		$em = $this->getDoctrine()->getEntityManager();
+		$em = $this->getDoctrine()->getManager();
 
 		$article = $em->getRepository('COArticlesBundle:Article')->getLatestBlog();			
     	$promos = $em->getRepository('COEShopBundle:Promo')->findAll();

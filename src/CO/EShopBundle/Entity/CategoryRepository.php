@@ -15,7 +15,7 @@ class CategoryRepository extends EntityRepository
 	
 	public function getParentsQB() {
 		//return $this->findByParent(null);
-		return $this->getEntityManager()
+		return $this->getManager()
 						->createQueryBuilder()
 							->select('c')
 							->from('COEShopBundle:Category', 'c')

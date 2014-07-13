@@ -1,11 +1,13 @@
 <?php
 namespace CO\EShopBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+//use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use CO\EShopBundle\Entity\Category;
 
-class LoadCategories implements FixtureInterface
+class LoadCategories extends AbstractFixture implements OrderedFixtureInterface 
 {
     /**
      * {@inheritDoc}
@@ -16,6 +18,8 @@ class LoadCategories implements FixtureInterface
         $entityShoes->setName('Shoes');
         $entityShoes->setMetadescription('generic metadescription');
         $entityShoes->setMetakeywords('generic metakeywords');
+
+        $this->addReference('cat_shoes', $entityShoes);
 
         $manager->persist($entityShoes);
 		
